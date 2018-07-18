@@ -14,6 +14,7 @@ public class StringAccumulator {
 	public static final String DELIMITER_BEGIN = "//";
 	public static final String DELIMITER_END = "\n";
 	public static final String DELIMITER_OF_DELIM = "|";
+	public static final int MAXIMUM_NUM = 1000;
 
 	private Set<String> delimiters = new HashSet<String>(Arrays.asList(new String[] { DEF_DELIMITER_1, DEF_DELIMITER_2 }));
 
@@ -36,7 +37,7 @@ public class StringAccumulator {
 	private int add(List<Integer> nums) {
 		int total = 0;
 		for (int n : nums) {
-			if (n > 1000) {
+			if (n > MAXIMUM_NUM) {
 				continue;
 			}
 			total += n;
